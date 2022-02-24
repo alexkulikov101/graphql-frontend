@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useQueryAllAvailablePets } from '../../hooks';
+import { useQueryAllAvailablePets } from '../../hooks/useQueryAllAvailablePets';
 
 export const SpecialList = () => {
   const { getAllAvailablePets, loading, error, pets } = useQueryAllAvailablePets();
@@ -10,6 +10,7 @@ export const SpecialList = () => {
 
   return (
     <div>
+      <h2>SpecialList:</h2>
       <button type='button' onClick={getAllAvailablePets}>
         Download Pets
       </button>

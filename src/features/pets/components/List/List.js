@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { useQueryAllPets } from '../../hooks';
+import { useQueryAllPets } from '../../hooks/useQueryAllPets';
 
 const Wrapper = styled.div`
   max-width: 300px;
@@ -19,14 +19,17 @@ export const List = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <Wrapper>
-      {pets.map(({ id, name, weight }) => (
-        <StyledItem key={id}>
-          <p>ID: {id}</p>
-          <p>Name: {name}</p>
-          <p>Weight: {weight}</p>
-        </StyledItem>
-      ))}
-    </Wrapper>
+    <>
+      <h2>List:</h2>
+      <Wrapper>
+        {pets.map(({ id, name, weight }) => (
+          <StyledItem key={id}>
+            <p>ID: {id}</p>
+            <p>Name: {name}</p>
+            <p>Weight: {weight}</p>
+          </StyledItem>
+        ))}
+      </Wrapper>
+    </>
   );
 };

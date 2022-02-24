@@ -1,5 +1,5 @@
 import React from 'react';
-import { useQueryAvailablePets } from '../../hooks';
+import { useQueryAvailablePets } from '../../hooks/useQueryAvailablePets';
 
 export const Counter = () => {
   const { availablePets, loading, error } = useQueryAvailablePets();
@@ -7,5 +7,10 @@ export const Counter = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  return <>{availablePets && <p>{availablePets}</p>}</>;
+  return (
+    <>
+      <h2>Counter:</h2>
+      {availablePets && <p>{availablePets}</p>}
+    </>
+  );
 };
