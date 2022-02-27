@@ -18,10 +18,10 @@
     jsonpointer "^5.0.0"
     leven "^3.1.0"
 
-"@apollo/client@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.npmjs.org/@apollo/client/-/client-3.4.0.tgz#7e583ec6b22522aedb8ccb9ee115eb79591f9931"
-  integrity sha512-ASGw+L1KYLm3Syl5lJKFB6nLEuthBUcvSYhI6p4g4hi+kMli6+UarMONuIYmTBUec2KcQCfs4uwi3bd0xWQ8zg==
+"@apollo/client@3.4.10":
+  version "3.4.10"
+  resolved "https://registry.npmjs.org/@apollo/client/-/client-3.4.10.tgz#cee9ed75b1bb7f391c55d79300ecf87096e59792"
+  integrity sha512-b+8TT3jBM2BtEJi+V2FuLpvoYDZCY3baNYrgAgEyw4fjnuBCSRPY7qVjqriZAwMaGiTLtyVifGhmdeICQs4Eow==
   dependencies:
     "@graphql-typed-document-node/core" "^3.0.0"
     "@wry/context" "^0.6.0"

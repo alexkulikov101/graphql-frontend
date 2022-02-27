@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
 import styled from 'styled-components';
-import { useCustomer } from '../hooks/useCustomer';
+import { useLogin } from '../hooks/useLogin';
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,8 +9,8 @@ const Wrapper = styled.div`
   width: 300px;
 `;
 
-export const Customer = () => {
-  const { addUser, loading, error, createdAccount } = useCustomer();
+export const Login = () => {
+  const { logIn, loading, error } = useLogin();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -18,21 +18,17 @@ export const Customer = () => {
   const submit = (values) => {
     const payload = {
       variables: {
-        account: {
-          ...values,
-        },
+        ...values,
       },
     };
-    addUser(payload);
+    logIn(payload);
   };
 
   return (
     <div>
-      <h1>Customer</h1>
-      {createdAccount && <p>{createdAccount.name}</p>}
+      <h1>Login</h1>
       <Formik
         initialValues={{
-          name: '',
           username: '',
           password: '',
         }}
@@ -40,15 +36,12 @@ export const Customer = () => {
       >
         <Form>
           <Wrapper>
-            <label htmlFor='Name'>Name</label>
-            <Field id='Name' name='name' placeholder='Jane' />
-
             <label htmlFor='userName'>User Name</label>
             <Field id='userName' name='username' placeholder='Doe' />
 
             <label htmlFor='password'>Password</label>
             <Field id='password' name='password' type='password' />
-            <button type='submit'>Submit</button>
+            <button type='submit'>login</button>
           </Wrapper>
         </Form>
       </Formik>
